@@ -1,0 +1,84 @@
+NOTICE — third-party components and their terms
+================================================
+
+This project's own code (touch/*.js, docs of the build pipeline) is MIT licensed
+to terry65536, see LICENSE. Everything below is somebody else's work
+and is NOT covered by that license.
+
+
+1. Eaglercraft 26.2 / 26.2 u2 client
+------------------------------------
+Authors: o_xer (a.k.a. eymenwsmc) for the 26.2 port; kingjoeishere / Joey-JM for
+the published u2 workspace; lax1dude and ayunami2000 for the original
+Eaglercraft / EaglercraftX engine that the port descends from.
+
+Source: https://github.com/kingjoeishere/Eaglercraft-26.2-u2-workspace
+
+That repository ships NO LICENSE file. Individual files carry this header, which
+is the warranty-disclaimer half of a BSD 2-Clause style notice:
+
+    Copyright (c) 2022-2026 lax1dude / Eagler 26.2.
+
+    THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS "AS IS"
+    AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE
+    IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE
+    ARE DISCLAIMED. IN NO EVENT SHALL THE COPYRIGHT HOLDER OR CONTRIBUTORS BE
+    LIABLE FOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR
+    CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF
+    SUBSTITUTE GOODS OR SERVICES; LOSS OF USE, DATA, OR PROFITS; OR BUSINESS
+    INTERRUPTION) HOWEVER CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN
+    CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE)
+    ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE
+    POSSIBILITY OF SUCH DAMAGE.
+
+A third-party mirror (NT9712/eaglercraft-262-workspace) labels itself Apache-2.0;
+that label does not come from the original authors, so the licence state above is
+the one recorded here.
+
+The upstream Eaglercraft 1.5.2 and EaglercraftX 1.8 repositories
+(lax1dude/eaglercraft, lax1dude/EaglercraftX) were removed from GitHub under DMCA
+and now return 404.
+
+
+2. Minecraft (Java Edition and Bedrock Edition)
+----------------------------------------------
+Copyright Mojang AB / Microsoft. Proprietary. Governed by the Minecraft EULA:
+https://www.minecraft.net/en-us/article/minecraft-eula
+
+The compiled client that this layer runs inside contains Mojang's game code and
+assets. This repository distributes no playable client: pack.mjs takes the
+official client file as user-supplied input.
+
+With pack.mjs --credits, one text entry of the client's own asset archive
+(assets/minecraft/texts/credits.json) gains a short section crediting this touch
+layer. The other 19,511 entries are re-written byte for byte, and the container
+is the Eagler EPK v2.0 format documented in EPKCompiler.java.
+
+
+3. Bedrock Edition control sprites (docs/sprites/*.png, touch/sprites.js)
+--------------------------------------------------------------------------
+Source: https://github.com/Mojang/bedrock-samples
+        resource_pack/textures/gui/controls/{up,down,left,right,up_left,up_right,
+        down_left,down_right,*_pressed,jump,jump_pressed,sneak,sneak_pressed,
+        large_button,large_button_pressed}.png
+        resource_pack/textures/ui/{joystick_frame,joystick_knob,inventory_icon,
+        pause_icon,chat_keyboard}.png
+
+bedrock-samples ships no LICENSE file, so these textures remain Mojang's
+intellectual property and are covered by Mojang's content terms rather than by
+this repository's MIT license. mksprites.mjs accepts any same-named PNGs in
+docs/sprites/, so the set can be replaced with original artwork.
+
+
+4. Build toolchain and libraries
+--------------------------------
+TeaVM (Java -> WebAssembly compiler), Apache-2.0 — https://teavm.org/
+brotli-dec-wasm, MIT / Apache-2.0 — used by the official single-file packaging
+step in wasm-toolchain/build-single-html.js.
+
+
+5. Trademarks
+-------------
+Minecraft, Mojang and Bedrock are trademarks of Mojang Synergies AB / Microsoft.
+This project is not affiliated with, endorsed by or sponsored by Mojang or
+Microsoft, and it is not affiliated with the Eaglercraft project either.

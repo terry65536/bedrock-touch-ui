@@ -1,0 +1,12 @@
+# The playable client is Mojang's work and must never be committed here.
+# pack.mjs writes it; keep it out of git entirely.
+*.html
+!touch/stub.html
+!docs/*.html
+
+# build inputs / local scratch
+node_modules/
+_profiles/
+*.log
+Thumbs.db
+.DS_Store
